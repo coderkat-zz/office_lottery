@@ -1,0 +1,59 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+	<title>Set up your Office Lottery Pool</title>
+</head>
+
+<body>
+	<h1 class="text-center"><strong>Set up your Office Lottery Pool!</strong></h1>
+
+	<h1 class="text-center">Add Participants</h1>
+
+	<form class="text-center" name="new_participant" action="/show_setup" method="post">
+		Participant name: <input type="text" name="participant_name"><br />
+		Number of entries: <input type="text" name="number_entries"><br />
+		<input class="btn-small" class="text-center" type="submit" value="Add new participant">
+	</form>
+
+<!-- 	List already entered participants after each entry 
+ -->
+<!-- 	<table class="pretty-table">
+		<tr>
+			<td><strong>Name</strong></td>
+			<td><strong>Number of entries</strong></td>
+		</tr>
+	{% for entry in participants  %}
+		<tr>
+			<td>{{ entry[0] }}</td>
+			<td>{{ entry[1] }}</td>
+		</tr>
+	{% else %}
+		<tr>
+			<td><strong>No participants entered</strong></td>
+		</tr>
+	{% endfor %}
+	</table> -->
+
+	<h1 class="text-center">Add Games</h2>
+
+	<form class="text-center" name="new_game" action="/show_setup" method="post">
+		Game: <input type="text" name="game"><br />
+		<input class="btn-small" class="text-center" type="submit" value="Add new game">
+	</form>
+<!-- 	<table class="pretty-table">
+			<tr>
+				<td><strong>Games</strong></td>
+			</tr>
+	{% for item in games %}
+			<tr>
+				<td>{{ item }}</td>
+			</tr>
+		{% else %}
+			<tr>
+				<td><strong>No games entered</strong></td>
+			</tr>
+		{% endfor %}
+		</table> -->
+
+</body>
+</html>

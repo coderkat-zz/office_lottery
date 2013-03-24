@@ -1,0 +1,48 @@
+User can log in
+
+User can add names, # of 'draws'
+User can add ticket prizes/games/etc
+User can generate random drawing
+
+------------------
+
+USERS
+	id - INT (primary key)
+	email - varchar (64)
+	password - varchar (64)
+	first_name- varchar (64)
+	last_name - varchar (64)
+
+ENTRIES
+	id INT (primary key)
+	participant name - varchar (255)
+	number of entries in drawing - INT
+
+GAMES
+	id - INT (primary key)
+	ticket name (game date) - varchar (64)
+
+----------
+TO DO:
+
+Set up login?? user control?
+
+different setup for entry page:
+	-after each entry added, redirect to the same page
+	 and show a list of what has been added thus far.
+	
+	-include a "Ready??" button that directs to /show_setup page
+	
+	- /show_setup has a "need to make more changes?" "Go bacK" button that redirects to /the_lottery
+
+	-Create the option to delete someting you added
+
+----------
+
+ideas for usability:
+
+allow participants to indicate what games they'd like to be in the running for (using their "buy-in's")
+
+table for each participant?
+
+

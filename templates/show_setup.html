@@ -1,0 +1,58 @@
+<html>
+<head>
+	<title>The Lottery</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+</head>
+
+<body>
+		<h1 class="text-center">Draw!!!</h1>
+	    <form class="text-center" action="/winners" method="get">
+			<button  class="btn-large" type="submit" value="Submit">Random Drawing!</button>
+		</form>
+
+		<h1 class="text-center">Participants</h1>
+		<table class="pretty-table">
+			<tr>
+				<td><strong>Name</strong></td>
+				<td><strong>Number of entries</strong></td>
+			</tr>
+		{% for entry in participants  %}
+			<tr>
+				<td>{{ entry[0] }}</td>
+				<td>{{ entry[1] }}</td>
+			</tr>
+		{% else %}
+			<tr>
+				<td><strong>No participants entered</strong></td>
+			</tr>
+		{% endfor %}
+		</table>
+
+		<form class="text-center" action="/the_lottery" method="get">
+			<button class="btn-large" type="submit"  value="Submit">Add more</button>
+		</form>
+
+		<h2 class="text-center">Games</h2>
+		<table class="pretty-table">
+			<tr>
+				<td><strong>Game</strong></td>
+			</tr>
+
+		{% for item in games %}
+			<tr>
+				<td>{{ item }}</td>
+			</tr>
+		{% else %}
+			<tr>
+				<td><strong>No games entered</strong></td>
+			</tr>
+		{% endfor %}
+		</table>
+		
+		<form class="text-center" action="/the_lottery" method="get">
+		<button class="btn-large" type="submit"  value="Submit">Add more</button>
+				</form>
+		
+
+</body>
+</html>

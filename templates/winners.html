@@ -1,0 +1,23 @@
+<body>
+<head>
+	<title>Winners</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+</head>
+		
+
+		<h1 class="centered-title">Winners</h1>
+		<table class="pretty-table">
+			<tr>
+				<td><strong>Name</strong></td>
+				<td><strong>Game won</strong></td>
+			</tr>
+		{% for key in winners  %}
+			<tr>
+				<td>{{ key }}</td>
+				<td>{{ winners[key]|join(', ') }}</td>
+			</tr>
+		{% endfor %}
+		</table>
+
+</body>
+</html>

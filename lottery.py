@@ -7,8 +7,8 @@ app = Flask(__name__)
 def index():
 	return render_template("index.html", user_name="kat")
 
-@app.route("/the_lottery")
-def the_lottery():
+@app.route("/the_players")
+def the_players():
 	db = model.connect_db()
 	participants_from_db = model.get_participants(db)
 	games_from_db = model.get_games(db)
@@ -27,6 +27,8 @@ def the_lottery():
 		games_list.append(game["game"])
 
 	return render_template("set_up.html", participants=participants, games=games_list)
+	# return render_template("set_up.html")
+
 
 @app.route("/show_setup")
 def show_setup():
@@ -55,14 +57,18 @@ def save_participant():
 	number_entries = request.form['number_entries']
 	db = model.connect_db()
 	participant_id = model.new_participant(db, participant_name, number_entries)
-	return redirect("/show_setup")
+	print participant_id
+	return redirect("/the_lottery")
+
+#participants = dict([(r["participant_name"], r["number_entries"]) for r in model.get_participants(db)])
 
 @app.route("/save_game", methods=["POST"])
 def save_game():
 	new_game_id = request.form['game']
 	db = model.connect_db()
 	game_id = model.new_game(db, new_game_id)
-	return redirect("/show_setup")
+	print game_id
+	return redirect("/the_lottery")
 
 @app.route("/winners")
 def winners():

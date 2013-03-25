@@ -9,7 +9,7 @@
 
 	<h1 class="text-center">Add Participants</h1>
 
-	<form class="text-center" name="new_participant" action="/show_setup" method="post">
+	<form class="text-center" name="new_participant" action="/save_participant" method="post">
 		Participant name: <input type="text" name="participant_name"><br />
 		Number of entries: <input type="text" name="number_entries"><br />
 		<input class="btn-small" class="text-center" type="submit" value="Add new participant">
@@ -17,7 +17,7 @@
 
 <!-- 	List already entered participants after each entry 
  -->
-<!-- 	<table class="pretty-table">
+	<table class="pretty-table">
 		<tr>
 			<td><strong>Name</strong></td>
 			<td><strong>Number of entries</strong></td>
@@ -32,15 +32,15 @@
 			<td><strong>No participants entered</strong></td>
 		</tr>
 	{% endfor %}
-	</table> -->
+	</table>
 
 	<h1 class="text-center">Add Games</h2>
 
-	<form class="text-center" name="new_game" action="/show_setup" method="post">
+	<form class="text-center" name="new_game" action="/save_game" method="post">
 		Game: <input type="text" name="game"><br />
-		<input class="btn-small" class="text-center" type="submit" value="Add new game">
+		<input class="btn-small" class="text-center" type="submit" value="Add new game" >
 	</form>
-<!-- 	<table class="pretty-table">
+	<table class="pretty-table">
 			<tr>
 				<td><strong>Games</strong></td>
 			</tr>
@@ -53,7 +53,7 @@
 				<td><strong>No games entered</strong></td>
 			</tr>
 		{% endfor %}
-		</table> -->
+		</table>
 
 </body>
 </html>
